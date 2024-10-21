@@ -1,18 +1,35 @@
 import json
 import os
 import time
-
+import sys
 import requests
 import yaml
 from loguru import logger
 from huggingface_hub import HfApi
+from dotenv import load_dotenv
 
 from demo import LoraTrainingArguments, train_lora
 from utils.constants import model2base_model, model2size
 from utils.flock_api import get_task, submit_task
 from utils.gpu_utils import get_gpu_type
 
+import random
+import numpy as np
+import torch
+import trl
+
+def set_seed(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+
+set_seed(42)
+
 HF_USERNAME = os.environ["HF_USERNAME"]
+
+load_dotenv()
 
 if __name__ == "__main__":
     task_id = os.environ["TASK_ID"]
@@ -44,12 +61,16 @@ if __name__ == "__main__":
     # train all feasible models and merge
     for model_id in all_training_args.keys():
         logger.info(f"Start to train the model {model_id}...")
+        revision = all_training_args[model_id].get("revision", None)
+        if revision is not None:
+            del all_training_args[model_id]["revision"]
         # if OOM, proceed to the next model
         try:
             train_lora(
                 model_id=model_id,
                 context_length=context_length,
                 training_args=LoraTrainingArguments(**all_training_args[model_id]),
+                revision=revision
             )
         except RuntimeError as e:
             logger.error(f"Error: {e}")

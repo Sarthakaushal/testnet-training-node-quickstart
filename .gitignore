@@ -160,3 +160,7 @@ cython_debug/
 #.idea/
 mlruns/
 mlruns/*
+flock/
+flock/*
+outputs/*
+*.txt

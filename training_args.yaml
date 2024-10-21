@@ -19,15 +19,68 @@
 # microsoft/Phi-3.5-mini-instruct:
 #   per_device_train_batch_size: 2
 #   gradient_accumulation_steps: 8
+#   num_train_epochs: 12
+#   lora_rank: 2
+#   lora_alpha: 32
+#   lora_dropout: 0.1
+
+# Qwen/Qwen2.5-3B-Instruct:
+#   per_device_train_batch_size: 2
+#   gradient_accumulation_steps: 8
 #   num_train_epochs: 10
+#   lora_rank: 4
+#   lora_alpha: 8
+#   lora_dropout: 0.1
+
+# srrthk/task-13-microsoft-Phi-3.5-mini-instruct:
+#   per_device_train_batch_size: 2
+#   gradient_accumulation_steps: 8
+#   num_train_epochs: 20
 #   lora_rank: 8
 #   lora_alpha: 32
-#   lora_dropout: 0.
+#   lora_dropout: 0.1
 
-Qwen/Qwen2.5-3B-Instruct:
-  per_device_train_batch_size: 1
+# # Experiment 3
+# microsoft/Phi-3.5-mini-instruct:
+#   per_device_train_batch_size: 2
+#   gradient_accumulation_steps: 8
+#   num_train_epochs: 10
+#   lora_rank: 16
+#   lora_alpha: 32
+#   lora_dropout: 0.05
+
+# # Experiment 4
+# microsoft/Phi-3.5-mini-instruct:
+#   per_device_train_batch_size: 2
+#   gradient_accumulation_steps: 8
+#   num_train_epochs: 10
+#   lora_rank: 2
+#   lora_alpha: 32
+#   lora_dropout: 0.1
+
+# # Experiment 5
+# microsoft/Phi-3.5-mini-instruct:
+#   per_device_train_batch_size: 2
+#   gradient_accumulation_steps: 8
+#   num_train_epochs: 10
+#   lora_rank: 2
+#   lora_alpha: 2
+#   lora_dropout: 0.05
+
+# # Experiment 6
+# microsoft/Phi-3-mini-4k-instruct:
+#   per_device_train_batch_size: 2
+#   gradient_accumulation_steps: 8
+#   num_train_epochs: 6
+#   lora_rank: 8
+#   lora_alpha: 32
+#   lora_dropout: 0.1
+
+# Experiment 10
+microsoft/Phi-3-mini-4k-instruct:
+  per_device_train_batch_size: 2
   gradient_accumulation_steps: 8
-  num_train_epochs: 10
-  lora_rank: 4
-  lora_alpha: 8
+  num_train_epochs: 5
+  lora_rank: 8
+  lora_alpha: 32
   lora_dropout: 0.1

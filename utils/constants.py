@@ -27,6 +27,8 @@ model2template = {
     "google/gemma-2b": gemma_template,
     "google/gemma-7b": gemma_template,
     "microsoft/Phi-3.5-mini-instruct": phi_template,
+    "srrthk/task-13-microsoft-Phi-3.5-mini-instruct": phi_template,
+    "microsoft/Phi-3-mini-4k-instruct": phi_template
 }
 
 model2size = {
@@ -44,5 +46,6 @@ model2base_model = {
     "google/gemma-2b": "gemma",
     "google/gemma-7b": "gemma",
     "microsoft/Phi-3.5-mini-instruct": "phi3",
-    "Qwen/Qwen2.5-3B-Instruct": "qwen2.5"
+    "Qwen/Qwen2.5-3B-Instruct": "qwen2.5",
+    "microsoft/Phi-3-mini-4k-instruct": "phi3"
 }
