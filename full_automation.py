@@ -25,7 +25,7 @@ def set_seed(seed):
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
 
-set_seed(42)
+set_seed(28)
 
 HF_USERNAME = os.environ["HF_USERNAME"]
 
