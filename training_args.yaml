@@ -149,12 +149,29 @@
 #   lora_alpha: 32
 #   lora_dropout: 0.1
 
-# Experiment 21
+# # Experiment 21
+# microsoft/Phi-3-mini-4k-instruct:
+#   per_device_train_batch_size: 2
+#   gradient_accumulation_steps: 8
+#   num_train_epochs: 16
+#   lora_rank: 10
+#   lora_alpha: 32
+#   lora_dropout: 0.1
+
+# # Experiment 22
+# microsoft/Phi-3-mini-4k-instruct:
+#   per_device_train_batch_size: 2
+#   gradient_accumulation_steps: 8
+#   num_train_epochs: 16
+#   lora_rank: 6
+#   lora_alpha: 32
+#   lora_dropout: 0.1
+
+# Experiment 23
 microsoft/Phi-3-mini-4k-instruct:
   per_device_train_batch_size: 2
   gradient_accumulation_steps: 8
   num_train_epochs: 16
-  lora_rank: 10
-  lora_alpha: 32
+  lora_rank: 6
+  lora_alpha: 16
   lora_dropout: 0.1
-
